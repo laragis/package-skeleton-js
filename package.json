@@ -24,7 +24,7 @@
     "src"
   ],
   "scripts": {
-    "build": "pnpm clearn && pnpm microbundle",
+    "build": "pnpm clean && pnpm microbundle",
     "clean": "rimraf dist",
     "format": "prettier --write \"(src|examples)/**/*.{js,ts,tsx}\" \"**/*.md\"",
     "format:check": "prettier --list-different \"(src|examples)/**/*.{js,ts,tsx}\" \"docs/*/**.md\"",
