@@ -1,0 +1,65 @@
+{
+    "name": "@ttungbmt/package-skeleton-js",
+    "version": "1.0.0",
+    "description": "A skeleton repository",
+    "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/laragis/package-skeleton-jst.git"
+    },
+    "homepage": "https://github.com/laragis/package-skeleton-js#readme",
+    "keywords": [
+  
+    ],
+    "publishConfig": {
+      "access": "public"
+    },
+    "source": "src/index.js",
+    "main": "dist/index.js",
+    "umd:main": "dist/index.umd.js",
+    "module": "dist/index.mjs",
+    "exports": {
+      "require": "./dist/index.js",
+      "default": "./dist/index.modern.mjs"
+    },
+    "devDependencies": {
+      "@size-limit/preset-small-lib": "^8.0.1",
+      "path": "^0.12.7",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "rimraf": "^3.0.2",
+      "size-limit": "^8.0.1",
+      "microbundle": "^0.15.1",
+      "vite": "^3.0.9"
+    },
+    "scripts": {
+      "size": "size-limit",
+      "clean": "rimraf dist",
+      "build": "pnpm clearn && pnpm microbundle",
+      "format": "prettier --write \"(src|examples)/**/*.{js,ts,tsx}\" \"**/*.md\"",
+      "format:check": "prettier --list-different \"(src|examples)/**/*.{js,ts,tsx}\" \"docs/*/**.md\""
+    },
+    "files": [
+      "dist",
+      "src"
+    ],
+    "dependencies": {
+ 
+    },
+    "peerDependencies": {
+      "react": "^16.9.0 || ^17.0.0 || ^18",
+      "react-dom": "^16.9.0 || ^17.0.0 || ^18"
+    },
+    "sideEffects": false,
+    "size-limit": [
+      {
+        "limit": "200 kB",
+        "path": "dist/index.js"
+      },
+      {
+        "limit": "200 kB",
+        "path": "dist/index.mjs"
+      }
+    ]
+  }
