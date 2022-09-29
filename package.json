@@ -24,12 +24,12 @@
     "src"
   ],
   "scripts": {
-    "build": "pnpm clean && pnpm microbundle",
+    "build": "pnpm clean && pnpm microbundle --jsx React.createElement",
     "clean": "rimraf dist",
     "format": "prettier --write \"(src|examples)/**/*.{js,ts,tsx}\" \"**/*.md\"",
     "format:check": "prettier --list-different \"(src|examples)/**/*.{js,ts,tsx}\" \"docs/*/**.md\"",
     "size": "size-limit",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --jsx React.createElement --no-compress"
   },
   "dependencies": {},
   "devDependencies": {
@@ -40,7 +40,10 @@
     "size-limit": "^8.0.1",
     "vite": "^3.0.9"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
   "publishConfig": {
     "access": "public"
   },
